@@ -1,0 +1,14 @@
+***** For GUI in jupyter Notebook *****
+pip install ipywidgets
+jupyter nbextension enable --py widgetsnbextension
+
+***** For Removing validation failed when using plotly inside a notebook *****
+pip install --upgrade nbformat
+
+***** Useful features for jupyter notebook *****
+https://github.com/wenmin-wu/jupyter-tabnine
+***** Code completion *****
+pip install jupyter-tabnine --user
+jupyter nbextension install --py jupyter_tabnine --user
+jupyter nbextension enable --py jupyter_tabnine --user
+jupyter serverextension enable --py jupyter_tabnine --user
