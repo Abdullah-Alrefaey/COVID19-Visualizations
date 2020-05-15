@@ -13,13 +13,13 @@ def loadCSVData(filePath: str) -> list:
     A list of 3 element;
         1. A list of header names
         2. A list of 3 lists, each list contain the data of a single column
-        3. A list of tuples contains the data of each row.
+        3. A list of lists contains the data of each row.
     ============= ===================================================================================
     """
     with open(filePath) as csvFile:
         csv_reader = csv.reader(csvFile)
         headers = []
-        dataTuple = []
+        dataRows = []
         dataList = [[], [], []]
 
         # Get the header names
@@ -33,16 +33,19 @@ def loadCSVData(filePath: str) -> list:
             for i in range(len(row)):
                 dataList[i].append(row[i])
 
-        # Get the list of tuples for each row
+        # Get the list of lists for each row
         for i in range(len(dataList[0])):
-            dataTuple.append((dataList[0][i], dataList[1][i], dataList[2][i]))
+            temp = []
+            for j in range(len(headers)):
+                temp.append(dataList[j][i])
+            dataRows.append(temp)
 
-    return [headers, dataList, dataTuple]
+    return [headers, dataList, dataRows]
 
 
 
 if __name__ == '__main__':
-    headers, dataLists, dataTuples = loadCSVData('Data.csv')
+    headers, dataLists, dataRows = loadCSVData('tempData.csv')
     print(headers)
     print(dataLists)
-    print(dataTuples)
+    print(dataRows)
