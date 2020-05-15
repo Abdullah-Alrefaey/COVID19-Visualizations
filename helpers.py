@@ -8,8 +8,6 @@ def loadCSVData(filePath: str) -> list:
     ============= ===================================================================================
     **Arguments**
     filePath:     path of the csv file
-    button:       button type.
-    icon:         icon type.
     ============= ===================================================================================
     **Returns**
     A list of 3 element;
