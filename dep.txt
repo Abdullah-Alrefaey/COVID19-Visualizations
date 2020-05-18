@@ -7,8 +7,26 @@ pip install --upgrade nbformat
 
 ***** Useful features for jupyter notebook *****
 https://github.com/wenmin-wu/jupyter-tabnine
+
 ***** Code completion *****
 pip install jupyter-tabnine --user
 jupyter nbextension install --py jupyter_tabnine --user
 jupyter nbextension enable --py jupyter_tabnine --user
 jupyter serverextension enable --py jupyter_tabnine --user
+
+
+***** To Use Orca for converting figure to image bytes *****
+conda install -c plotly plotly-orca psutil requests
+
+
+***** For Exporting a video using openCV *****
+pip install opencv-python
+
+Old Solution: This File "openh264-1.8.0-win64.dll" Should be added to the PATH of your system:
+https://github.com/cisco/openh264/releases and Choose the correct version
+Or you could put the file in the same directory of python script
+
+New Solution: Now the file is included automatically from lib folder by code
+
+FFmpeg should be installed on your machine
+
